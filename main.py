@@ -1,11 +1,11 @@
 import tkinter
 import json
 
-system = tkinter.Tk()
-header = tkinter.Frame(system, background="gray", width=500, height=150)
-sign = tkinter.Frame(system, background="yellow", width=500, height=300)
+start_screen = tkinter.Tk()
+header = tkinter.Frame(start_screen, background="gray", width=500, height=150)
+sign = tkinter.Frame(start_screen, background="yellow", width=500, height=300)
 
 header.pack()
 sign.pack()
 
-system.mainloop()
+start_screen.mainloop()
