@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 
+from windows import account_creation_screen
+
 def starting_screen() -> None:
     start = Tk()
 
@@ -16,7 +18,7 @@ def starting_screen() -> None:
     sign.rowconfigure([0, 1, 2, 3, 4, 5, 6], pad=10, minsize=50)
 
     sign_in = ttk.Button(sign, text='Entrar')
-    sign_up = ttk.Button(sign, text='Criar conta')
+    sign_up = ttk.Button(sign, text='Criar conta', command=account_creation_screen.account_creation_screen)
 
     close = ttk.Button(sign, text='Fechar', command=start.destroy)
 
