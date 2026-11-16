@@ -18,6 +18,12 @@ class Screen:
         self.header.pack()
         self.body.pack()
 
+    def change_screen(self, screen: "Screen") -> None:
+        for widget in self._window.winfo_children():
+            widget.destroy()
+
+        screen(self._window)
+
 
 class Start(Screen):
     def __init__(self, window: Tk) -> None:
@@ -25,7 +31,7 @@ class Start(Screen):
 
         self.title = ttk.Label(self.header, text='Bem vindo(a)!\nEscolha uma opção para acessar o sistema:', justify='center')
         self.sign_in = ttk.Button(self.body, text='Entrar')
-        self.sign_up = ttk.Button(self.body, text='Criar conta')
+        self.sign_up = ttk.Button(self.body, text='Criar conta', command=lambda: self.change_screen(CreateAccount))
         self.close = ttk.Button(self.body, text='Fechar', command=self._window.destroy)
 
         self._calling()
