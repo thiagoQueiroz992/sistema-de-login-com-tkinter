@@ -51,11 +51,11 @@ class CreateAccount(Screen):
         super().__init__(window)
 
         self.title = ttk.Label(self.header, text='Insira seus dados para criação da conta.')
-        self.name = Entry(self.body)
-        self.lastname = Entry(self.body)
-        self.username = Entry(self.body)
-        self.password = Entry(self.body)
-        self.confpassword = Entry(self.body)
+        self.name = ttk.Entry(self.body)
+        self.lastname = ttk.Entry(self.body)
+        self.username = ttk.Entry(self.body)
+        self.password = ttk.Entry(self.body)
+        self.confpassword = ttk.Entry(self.body)
 
         self._calling()
 
