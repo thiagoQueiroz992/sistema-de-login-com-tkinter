@@ -51,11 +51,18 @@ class CreateAccount(Screen):
         super().__init__(window)
 
         self.title = ttk.Label(self.header, text='Insira seus dados para criação da conta.')
-        self.name = ttk.Entry(self.body)
-        self.lastname = ttk.Entry(self.body)
-        self.username = ttk.Entry(self.body)
-        self.password = ttk.Entry(self.body)
-        self.confpassword = ttk.Entry(self.body)
+        
+        self.name = ttk.Labelframe(self.body, text='Nome')
+        self.lastname = ttk.Labelframe(self.body, text='Sobrenome')
+        self.username = ttk.Labelframe(self.body, text='Nome de usuário')
+        self.password = ttk.Labelframe(self.body, text='Senha')
+        self.confpassword = ttk.Labelframe(self.body, text='Confirmar senha')
+
+        self.entry_name = ttk.Entry(self.name, width=50)
+        self.entry_lastname = ttk.Entry(self.lastname, width=50)
+        self.entry_username = ttk.Entry(self.username, width=50)
+        self.entry_password = ttk.Entry(self.password, width=50)
+        self.entry_confpassword = ttk.Entry(self.confpassword, width=50)
 
         self._calling()
 
@@ -68,3 +75,9 @@ class CreateAccount(Screen):
         self.username.grid(row=3, column=0)
         self.password.grid(row=4, column=0)
         self.confpassword.grid(row=5, column=0)
+
+        self.entry_name.pack()
+        self.entry_lastname.pack()
+        self.entry_username.pack()
+        self.entry_password.pack()
+        self.entry_confpassword.pack()
